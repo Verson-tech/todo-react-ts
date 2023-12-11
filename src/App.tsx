@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ToDo from "./components/ToDo";
+import NewTodo from "./components/NewTodo";
+import Layout from "antd/lib/layout/layout";
 
-function App() {
+const App: React.FC = () => {
+  let todos = [{ id: "tet", text: "todo1" }];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <div className="App">
+        <NewTodo />
+        <ToDo items={todos} />
+      </div>
+    </Layout>
   );
-}
-
+};
 export default App;
